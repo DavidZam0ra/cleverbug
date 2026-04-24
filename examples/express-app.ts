@@ -135,8 +135,8 @@ app.get('/test-bug', (_req: Request, _res: Response) => {
 app.get('/checkout', (req: Request, res: Response, next: NextFunction) => {
   try {
     // Simulated service call
-    const cart = undefined as unknown as { total: number };
-    const _total = cart.total; // throws TypeError
+    const cart = undefined as unknown as { price: number };
+    const _price = cart.price; // throws TypeError
 
     res.json({ ok: true });
   } catch (err) {
